@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+  <title>
+    COVID-19
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    table {
+    	border: 1px solid black;
+    }
+    td, th {
+    	border: 1px solid black;
+    }
+    div.a {
+    	padding-left: 20px;
+    }
+  </style>
+             <script>
+        window.onload = () => {
+           	fetch("https://api.covidtracking.com/v1/us/current.json")
+            .then(response => response.json())
+            .then(result => {
+              const cases = result[0].positive;
+             document.querySelector("#uscases").innerHTML=cases.toLocaleString();
+              const per=(cases/331579250)*100;
+             document.querySelector("#usper").innerHTML=per.toFixed(2).toString()+"%";
+            })
+        };    
+           </script>
+ </head>
+ <body>
+           <h1><center>
+             COVID-19   
+           </center></h1>
+    <hr>
+         	<h3><center>
+           The Symptoms of COVID-19
+                      </center></h3>
+           <text>
+              <div class="a">
+             The symptom’s strength can vary on every person from being mild or intense. Symptoms may include, but are not limited to:
+             </div>
+           </text>
+           <ul>
+             <li>Coughing</li>
+             <li>Sneezing</li>
+             <li>Trouble Breathing</li>
+             <li>Fever</li>
+             <li>Sore Throat</li>
+             <li>Headaches</li>
+             <li>Muscle Pain</li>
+             <li>Loss of Taste and Smell</li>
+           </ul>
+           <div class="alert alert-info">
+             <a href="#bib">[1]</a>Please don’t just use these as a diagnosis and instead go to a doctor right away if you have to. Some people show little to none symptoms so take precautions anyway.
+           </div>
+           <hr>
+           <h3><center>
+             Safety Precautions
+           </center></h3>
+           <div class = "a">
+             <text>
+               During this time please quarantine yourself at home. If for any reason you have to leave the house please wear a mask and take a small bottle of hand sanitizer with at least 60 percent of 100% alcohol.<a href="#bib">[2][3]</a> Please only use hand sanitizers when there are no other supplements such as soap and water.
+             </text>
+           </div>
+               <div class="alert alert-danger">
+               Some people are trying to take advantage of the situation by making hand sanitizers that have 60% percent of alcohol that is not purely made of ethanol or ethyl alcohol. Some hand sanitizers can also include methanol and 1-propanol that can cause more health problems such as blindness, nerve damage, and death.<a href="#bib">[4]</a> Please be careful before you buy. 
+To take extra precautions you can also wear plastic gloves to prevent contact with the things other people would have touched. 
+           </div>
+           <h3>
+             <center>
+               Amount of Cases in Different Places(Approximately)<a href="#bib">[5]</a>
+             </center>
+ </h3>
+   <table class="table">
+              <thead>
+                <th>
+                  Country
+                </th>
+                <th>
+                  Cases
+                </th>
+                <th>
+                  Population
+                </th>
+                <th>
+                  Population to Cases Ratio
+                </th>
+                <tbody>
+                  <tr>
+                    <td>
+                      USA(Live)
+                    </td>
+                    <td>
+                      <span id="uscases" />
+                    </td>
+                    <td>
+                      331,579,250
+                      </td>
+                      <td><span id="usper" /></td>
+                      <tr>
+                        <td>India</td>
+                        <td>7,547,762</td>
+                        <td>1,384,011,899</td>
+                        <td>0.54%</td>
+                      </tr>
+                      <tr>
+                        <td>France</td>
+                        <td>897,034</td>
+                        <td>65,316,637</td>
+                        <td>1.37%</td>
+                      </tr>
+                      <tr>
+                        <td>Peru</td>
+                        <td>865,549</td>
+                        <td>33,106,697</td>
+                        <td>2.61%</td>
+                      </tr>
+                      <tr>
+                        <td>Japan</td>
+                        <td>92,656</td>
+                        <td>126,360,020</td>
+                        <td>0.07%</td>
+                      </tr>
+                      <tr>
+                        <td>China</td>
+                        <td>85,672</td>
+                        <td>1,439,323,776</td>
+                        <td>
+                          0.000005%
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Australia</td>
+                        <td>27,391</td>
+                        <td>25,587,048</td>
+                        <td>0.0001% 
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          South Korea
+                          </td>
+                        <td>25,199</td>
+                        <td>51,282,384</td>
+                        <td>0.04%</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Sri Lanka
+                          </td>
+                        <td>5,538</td>
+                        <td>21,439,983</td>
+                        <td>0.03%</td>
+                      </tr>  <tr>
+                        <td>
+                          Vietnam
+                          </td>
+                        <td>1,134</td>
+                        <td>97,597,585</td>
+                        <td>0.001%</td>
+                      </tr>
+                 </table>
+   <div class="a">
+     <text>
+       Some countries that have taken good precautions against coronavirus are Australia, China, Vietnam, and Sri Lanka. A few things they have done to prevent the spread of coronavirus are things like
+     </text>
+   </div>
+<hr>
+                  <div id="bib">
+                  	[1]<a href="https://healthyhorns.utexas.edu/coronavirus_symptoms.html">https://healthyhorns.utexas.edu/coronavirus_symptoms.html</a><br>
+                    [2]<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2662657/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2662657/</a><br>
+                    [3]<a href="https://www.fda.gov/drugs/coronavirus-covid-19-drugs/hand-sanitizers-covid-19#:~:text=If%20soap%20and%20water%20are,%2C%20to%20young%20children">https://www.fda.gov/drugs/coronavirus-covid-19-drugs/hand-sanitizers-covid-19#:~:text=If%20soap%20and%20water%20are,%2C%20to%20young%20children</a>
+                    <br>[4]<a href="http://ph.lacounty.gov/hccp/covidscams/">http://ph.lacounty.gov/hccp/covidscams/</a><br>
+                    [5]<a href="https://www.worldometers.info/coronavirus/">https://www.worldometers.info/coronavirus/</a>
+                  </div>
+          </body>
+</html>
+</html>
